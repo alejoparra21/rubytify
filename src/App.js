@@ -6,8 +6,8 @@ import store from './store';
 import Artist from './components/Artist/Artist';
 import Genres from './components/Genres/Genres';
 import Album from './components/Album/Album';
-import MusicPlayer from './components/musicPlayer/index';
 import Song from './components/Song/Song';
+import MusicPlayer from './components/musicPlayer/index';
 import Tachyons from 'tachyons/css/tachyons.min.css'
 import logo from './logo.svg'
 import Home from "./components/Home/Home";
@@ -33,7 +33,7 @@ function App() {
                                     <RubytifyLinks activeOnlyWhenExact={true} to="/genres" label="Generos" />
                                 </li>
                                 <li>
-                                    <RubytifyLinks activeOnlyWhenExact={true} to="/albums" label="Álbumes" />
+                                    <RubytifyLinks activeOnlyWhenExact={true} to="/artists/:id/albums" label="Álbumes" />
                                 </li>
                             </ul>
                         </nav>
@@ -44,11 +44,12 @@ function App() {
                     <hr />
 
                     <Switch>
-                        <Route exact path="/artists/:id/albums" component={Song} />
                         <Route exact path="/genres" component={Genres} />
                         <Route exact path="/" component={Home} />
                         <Route exact path="/artists" component={Artist} />
                         <Route path="/artists/:id/albums" component={Album} />
+                        <Route exact path="/artists/:id/songs" component={Song} />
+
                     </Switch>
                     <MusicPlayer />
 

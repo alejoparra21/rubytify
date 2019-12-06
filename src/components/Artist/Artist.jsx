@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Artist.css'
 import { CommonAction } from "../../actions/index"
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class Artist extends Component {
@@ -49,7 +49,7 @@ class Artist extends Component {
                     <h1 className="db w-100 tc white">Artistas</h1>
                     {
                         artists.map(artist => (
-                            <Link  to={`/artists/${artist.id}/albums`} className="appCard br2 dib flex-l flex-wrap flex-column justify-center ma3 ma3-l w-100 w-20-l white">
+                            <Link to={`/artists/${artist.id}/albums`} className="appCard br2 dib flex-l flex-wrap flex-column justify-center ma3 ma3-l w-100 w-20-l white" key={artist.id}>
                                 <div className="appCardItem center">
                                     <img src={artist.image} alt={artists.name} />
                                 </div>

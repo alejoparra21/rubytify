@@ -12,9 +12,9 @@ class Song extends Component {
         };
     }
     componentDidMount() {
-
-        fetch("http://rubytify-ayenda.herokuapp.com/api/v1/albums/3/songs")
-            .then(response => response.json())
+        const { match: { params } } = this.props;
+        fetch(`https://rubytify.herokuapp.com/api/v1/albums/${params.id}/songs`)
+        .then(response => response.json())
             .then(
                 (result) => {
                     this.setState({
@@ -30,6 +30,11 @@ class Song extends Component {
                 },
             )
     }
+
+    
+    clickToPlay(preview_url){
+        this.props.playSong(preview_url)
+    }
     render() {
         const { error, isLoaded, songs } = this.state;
         if (error) {
@@ -38,13 +43,13 @@ class Song extends Component {
             return <div>Loading ...</div>
         } else {
             return (
-                <div className=" songs w-100 w-80-l ml-auto">
-                    <h1 className="db w-100 tc white">Canciones</h1>
+                <div className=" songs w-100 w-80-l ml-auto mt6">
+                    <h1 className="ma3 db w-100 tc white">Canciones</h1>
 
                     {
                         songs.map(song => (
                             <div className="appCard br2 dib ma3 ma3-l w-100 white">
-                                <a className="left songItem white no-underline" href={song.preview_url}>{song.name}</a>
+                                <a className="left songItem white no-underline" href={song.preview_url} key={song.id} >{song.name}</a>
                             </div>
                         ))
                     }

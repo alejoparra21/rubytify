@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CommonAction } from "../../actions/index"
+import { Link } from "react-router-dom";
+
 
 class Album extends Component {
     constructor(props) {
@@ -12,8 +14,9 @@ class Album extends Component {
         };
     }
     componentDidMount() {
+        const { match: { params } } = this.props;
 
-        fetch("http://rubytify-ayenda.herokuapp.com/api/v1/artists/4/albums")
+        fetch(`https://rubytify.herokuapp.com/api/v1/artists/${params.id}/albums`)
             .then(response => response.json())
             .then(
                 (result) => {
@@ -30,11 +33,7 @@ class Album extends Component {
                 },
             )
     }
-    componentWillMount() {
-        const { match: { params } } = this.props;
-        console.log("params", params)
-
-    }
+  
     render() {
         const { error, isLoaded, albums } = this.state;
         if (error) {
@@ -48,12 +47,12 @@ class Album extends Component {
 
                     {
                         albums.map(album => (
-                            <a href="/" className="appCard br2 dib flex-l flex-wrap justify-center ma3 ma3-l w-100 w-20-l white">
+                            <Link to={`/artists/${album.id}/songs`} className="appCard br2 dib flex-l flex-wrap flex-column justify-center ma3 ma3-l w-100 w-20-l white" key={album.id}>
                                 <div className="appCardItem center">
                                     <img src={album.image} alt={albums.name} />
                                 </div>
                                 <p className="mt2">{album.name}</p>
-                            </a>
+                            </Link>
                         ))
                     }
                 </div>);
