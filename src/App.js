@@ -8,7 +8,7 @@ import Genres from './components/Genres/Genres';
 import Album from './components/Album/Album';
 import Song from './components/Song/Song';
 import MusicPlayer from './components/musicPlayer/index';
-import Tachyons from 'tachyons/css/tachyons.min.css'
+import Tachyons  from 'tachyons/css/tachyons.min.css'
 import logo from './logo.svg'
 import Home from "./components/Home/Home";
 
@@ -32,9 +32,7 @@ function App() {
                                 <li>
                                     <RubytifyLinks activeOnlyWhenExact={true} to="/genres" label="Generos" />
                                 </li>
-                                <li>
-                                    <RubytifyLinks activeOnlyWhenExact={true} to="/artists/:id/albums" label="Álbumes" />
-                                </li>
+
                             </ul>
                         </nav>
 

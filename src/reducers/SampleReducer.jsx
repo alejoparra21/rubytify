@@ -5,10 +5,10 @@ export default function rootReducer(state = {}, action) {
                 ...state, 
                 artist: action.payload 
             };
-        case "SET_ALBUMS":
+        case "SET_SONG":
             return {
                 ...state, 
-                albums: action.payload 
+                song: action.payload 
             };
         default: return state
     }
