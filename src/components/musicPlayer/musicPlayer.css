@@ -1,0 +1,10 @@
+.musicPlayer {
+    left: 10%;
+}
+
+@media (max-width:768px){
+    .musicPlayer {
+        left:0;
+    }
+    
+}

@@ -1,0 +1,9 @@
+.flow {
+    height: 90vh;
+}
+
+@media (max-width:768px){
+    .flow {
+        height: 360px;
+    }
+}
