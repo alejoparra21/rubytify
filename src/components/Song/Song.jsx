@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { CommonAction } from "../../actions/index"
 
 class Song extends Component {
     constructor(props) {
@@ -41,8 +43,8 @@ class Song extends Component {
 
                     {
                         songs.map(song => (
-                            <div className="appCard br2 dib ma3 ma3-l w-20-l w-40 white">
-                                <a clasName="white no-underline" href={song.preview_url}>{song.name}</a>
+                            <div className="appCard br2 dib ma3 ma3-l w-100 white">
+                                <a className="left songItem white no-underline" href={song.preview_url}>{song.name}</a>
                             </div>
                         ))
                     }
@@ -52,4 +54,16 @@ class Song extends Component {
     }
 }
 
-export default Song;
+
+
+const mapStateToProps = (state) => ({
+    state: state
+});
+const mapDispatchToProps = dispatch => {
+    return {
+        CommonAction: (data) => dispatch(CommonAction(data))
+    }
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Song)

@@ -7,13 +7,12 @@ import Artist from './components/Artist/Artist';
 import Genres from './components/Genres/Genres';
 import Album from './components/Album/Album';
 import MusicPlayer from './components/musicPlayer/index';
+import Song from './components/Song/Song';
 import Tachyons from 'tachyons/css/tachyons.min.css'
 import logo from './logo.svg'
 import Home from "./components/Home/Home";
 
 function App() {
-
-
     return (
         <Provider store={store}>
             <Router>
@@ -45,10 +44,11 @@ function App() {
                     <hr />
 
                     <Switch>
+                        <Route exact path="/artists/:id/albums" component={Song} />
                         <Route exact path="/genres" component={Genres} />
                         <Route exact path="/" component={Home} />
                         <Route exact path="/artists" component={Artist} />
-                        <Route path={`/artists/${artist.name}/albums`} component={Album} />
+                        <Route path="/artists/:id/albums" component={Album} />
                     </Switch>
                     <MusicPlayer />
 

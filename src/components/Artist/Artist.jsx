@@ -49,7 +49,7 @@ class Artist extends Component {
                     <h1 className="db w-100 tc white">Artistas</h1>
                     {
                         artists.map(artist => (
-                            <Link  to={`/artists/${artist.name}/albums`} className="appCard br2 dib flex-l flex-wrap flex-column justify-center ma3 ma3-l w-100 w-20-l white">
+                            <Link  to={`/artists/${artist.id}/albums`} className="appCard br2 dib flex-l flex-wrap flex-column justify-center ma3 ma3-l w-100 w-20-l white">
                                 <div className="appCardItem center">
                                     <img src={artist.image} alt={artists.name} />
                                 </div>
