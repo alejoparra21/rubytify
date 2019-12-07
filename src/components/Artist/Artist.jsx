@@ -18,7 +18,7 @@ class Artist extends Component {
 
     componentDidMount() {
 
-        fetch("http://rubytify-ayenda.herokuapp.com/api/v1")
+        fetch("https://rubytify-ayenda.herokuapp.com/api/v1")
             .then(response => response.json())
             .then(
                 (result) => {
