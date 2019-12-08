@@ -43,7 +43,7 @@ class Song extends Component {
             return <div>Loading ...</div>
         } else {
             return (
-                <div className=" songs overflow-hidden w-100 w-80-l ml-auto mt0 mt6-l ">
+                <div className=" songs overflow-hidden w-100 w-80-l ml-auto mt0 mt6-l mb6 ">
                     <h1 className="ma3 db w-100 white">Canciones</h1>
                     {songs.map(song => (
                         <div className="appCard hover-bg-black-30 bb br0-l br2 dib ma0 pa3 tl w-100 white">
