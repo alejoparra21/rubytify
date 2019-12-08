@@ -45,7 +45,7 @@ class Artist extends Component {
             return <div>Loading ...</div>
         } else {
             return (
-                <div className="flex flex-wrap justify-between ml-auto overflow-hidden pb6 pr5 artist w-100 w-80-l">
+                <div className="flex flex-wrap justify-between ml-auto overflow-hidden pb6 pr0 pr5-l artist w-100 w-80-l">
                     <h1 className="db w-100 tc white">Artistas</h1>
                     {
                         artists.map(artist => (

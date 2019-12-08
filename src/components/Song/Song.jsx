@@ -49,7 +49,7 @@ class Song extends Component {
                         <div className="appCard bb br--top br0-l br2 dib hover-bg-black-30 ma0  tl w-100 white">
                             {song.preview_url != null ? (
                                 <p className="left songItem white pa3 no-underline" onClick={() => this.playSong(song.preview_url)} key={song.id} >{song.name}</p>
-                            ) : <p>No hay preview de la canción</p>}
+                            ) :  <p className="left songItem white pa3 no-underline">No hay preview de la canción</p>}
                         </div>
                     ))}
                 </div>);

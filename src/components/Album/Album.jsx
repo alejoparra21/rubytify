@@ -42,7 +42,7 @@ class Album extends Component {
             return <div>Loading ...</div>
         } else {
             return (
-                <div className="flex flex-wrap justify-between ml-auto overflow-hidden pb6 pr5 randomalbum w-100 w-80-l">
+                <div className="flex flex-wrap justify-between ml-auto overflow-hidden pb6 pr0 pr5-l randomalbum w-100 w-80-l">
                     <h1 className="db w-100 tc white">Álbumes</h1>
 
                     {
