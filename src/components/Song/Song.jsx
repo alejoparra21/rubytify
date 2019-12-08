@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PlaySong } from "../../actions/"
-
+import "./Song.css"
 class Song extends Component {
     constructor(props) {
         super(props);
@@ -43,10 +43,10 @@ class Song extends Component {
             return <div>Loading ...</div>
         } else {
             return (
-                <div className=" songs w-100 w-80-l ml-auto mt6">
-                    <h1 className="ma3 db w-100 tc white">Canciones</h1>
+                <div className=" songs overflow-hidden w-100 w-80-l ml-auto mt0 mt6-l ">
+                    <h1 className="ma3 db w-100 white">Canciones</h1>
                     {songs.map(song => (
-                        <div className="appCard br2 dib ma3 ma3-l w-100 white">
+                        <div className="appCard hover-bg-black-30 bb br0-l br2 dib ma0 pa3 tl w-100 white">
                             {song.preview_url != null ? (
                                 <p className="left songItem white no-underline" onClick={() => this.playSong(song.preview_url)} key={song.id} >{song.name}</p>
                             ) : <p>No hay preview de la canción</p>}
