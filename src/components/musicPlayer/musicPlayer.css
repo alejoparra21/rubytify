@@ -1,10 +1,4 @@
-.musicPlayer {
-    left: 10%;
+.audioPlayer {
+background-color:#f1f3f4;
 }
 
-@media (max-width:768px){
-    .musicPlayer {
-        left:0;
-    }
-    
-}

@@ -9,8 +9,8 @@ class MusicPlayer extends Component {
     render() {
 
         return (
-            <div className="musicPlayer fixed bottom w-100 flex justify-center center bottom-1">
-                <audio src={this.props.song} controls className="w-80 w-40-l " autoPlay>
+            <div className="fixed bottom w-100 flex justify-center center bottom-0">
+                <audio src={this.props.song} controls className="w-100 audioPlayer " autoPlay>
                 </audio>
             </div>);
     }

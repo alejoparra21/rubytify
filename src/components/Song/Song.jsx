@@ -46,9 +46,9 @@ class Song extends Component {
                 <div className=" songs overflow-hidden w-100 w-80-l ml-auto mt0 mt6-l mb6 ">
                     <h1 className="ma3 db w-100 white">Canciones</h1>
                     {songs.map(song => (
-                        <div className="appCard hover-bg-black-30 bb br0-l br2 dib ma0 pa3 tl w-100 white">
+                        <div className="appCard bb br--top br0-l br2 dib hover-bg-black-30 ma0  tl w-100 white">
                             {song.preview_url != null ? (
-                                <p className="left songItem white no-underline" onClick={() => this.playSong(song.preview_url)} key={song.id} >{song.name}</p>
+                                <p className="left songItem white pa3 no-underline" onClick={() => this.playSong(song.preview_url)} key={song.id} >{song.name}</p>
                             ) : <p>No hay preview de la canción</p>}
                         </div>
                     ))}
